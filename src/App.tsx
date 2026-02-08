@@ -451,7 +451,7 @@ function AboutSection() {
 // Experience Section
 function ExperienceSection() {
   const { ref, isVisible } = useScrollReveal();
-  const { t } = React.useContext(LanguageContext);
+  const { t, lang } = React.useContext(LanguageContext);
 
   const experiences = [
     {
@@ -512,9 +512,10 @@ function ExperienceSection() {
                 </span>
               </div>
               <h3 className="font-medium text-gray-800 mb-1">
-                {exp.company}
+                   {lang === 'zh' ? exp.company : exp.companyEn}
               </h3>
-              <p className="text-sm text-gray-500">{exp.department}</p>
+              <p className="text-sm text-gray-500">
+		   {lang === 'zh' ? exp.department : exp.departmentEn}
             </div>
           ))}
         </div>
