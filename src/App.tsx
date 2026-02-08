@@ -512,10 +512,12 @@ function ExperienceSection() {
                 </span>
               </div>
               <h3 className="font-medium text-gray-800 mb-1">
-                   {lang === 'zh' ? exp.company : exp.companyEn}
+                {lang === 'zh' ? exp.company : exp.companyEn}
               </h3>
+              {/* 下面这一行是刚刚报错的地方，已修正为 </p> */}
               <p className="text-sm text-gray-500">
-		   {lang === 'zh' ? exp.department : exp.departmentEn}
+                {lang === 'zh' ? exp.department : exp.departmentEn}
+              </p>
             </div>
           ))}
         </div>
